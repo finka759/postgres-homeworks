@@ -13,6 +13,9 @@ try:
             cur.execute("INSERT INTO employees VALUES (%s,%s, %s,%s)", (4, 'e_el_4', 'e_fn_4', 'e_ln_4'))
 
             cur.execute("SELECT * FROM employees")
+            rows = cur.fetchall()
+            for row in rows:
+                print(row)
 
             cur.execute("INSERT INTO customers VALUES (%s,%s, %s,%s)", (1, 'c_el_1', 'c_fn_1', 'c_ln_1'))
             cur.execute("INSERT INTO customers VALUES (%s,%s, %s,%s)", (2, 'c_el_2', 'c_fn_2', 'c_ln_2'))
@@ -20,6 +23,10 @@ try:
             cur.execute("INSERT INTO customers VALUES (%s,%s, %s,%s)", (4, 'c_el_4', 'c_fn_4', 'c_ln_4'))
 
             cur.execute("SELECT * FROM customers")
+            rows = cur.fetchall()
+            for row in rows:
+                print(row)
+
             dt = datetime.now(timezone.utc)
             cur.execute("INSERT INTO orders VALUES (%s,%s,%s,%s,%s)", (1, dt, 10, 1, 2))
             cur.execute("INSERT INTO orders VALUES (%s,%s,%s,%s,%s)", (2, dt, 11, 2, 4))
@@ -27,7 +34,6 @@ try:
             cur.execute("INSERT INTO orders VALUES (%s,%s,%s,%s,%s)", (4, dt, 13, 4, 1))
 
             cur.execute("SELECT * FROM orders")
-
             rows = cur.fetchall()
             for row in rows:
                 print(row)
