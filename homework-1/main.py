@@ -5,6 +5,7 @@ import csv
 
 conn = psycopg2.connect(host='localhost', database='north', user='postgres', password='1616')
 
+
 try:
     with conn:
         with conn.cursor() as cur:
@@ -38,7 +39,6 @@ try:
                 csvreader = csv.reader(csvfile)
                 query = "INSERT INTO orders VALUES (%s, %s, %s, %s, %s);"
                 for row in csvreader:
-                    # print(row)
                     cur.execute(query, row)
 
             cur.execute("SELECT * FROM orders")
