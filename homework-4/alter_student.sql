@@ -25,7 +25,7 @@ INSERT INTO student (first_name, last_name, birth_date, phone)
 VALUES
 ('fn1', 'ln1', '2001-01-01', '111-11-11'),
 ('fn2', 'ln2', '2002-02-02', '222-22-22'),
-('fn3', 'ln3', '2003-03-03', '333-33-33')
+('fn3', 'ln3', '2003-03-03', '333-33-33');
 
 -- 7. Удалить все данные из таблицы со сбросом идентификатор в исходное состояние
-TRUNCATE TABLE student RESTART IDENTITY
+TRUNCATE TABLE student RESTART IDENTITY;
